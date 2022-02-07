@@ -8,22 +8,34 @@ int input_side()
 }
 int check_scalene(int a,int b,int c)
 {
+  int equilateral,isosceles,scalene,r;
   if(a==b && b==c)
   {
-    return a;
+    r = equilateral;
   }
-  else if(a!=b && b!=c && a!=c)
+  else if(a!=b && b==c && a==c)
   {
-    return b;
+    r = isosceles;
   }
   else 
   {
-    return c;
+    r = scalene;
   }
 }
 void output(int a,int b,int c,int scalene)
 {
-  printf("a triangle with unequal sides %d,%d and %d is %d\n",a,b,c,scalene);
+  if(a==b && b==c)
+  {
+    printf("Triangle is equilateral\n");
+  }
+  else if(a==b && b!=c && a!=c)
+  {
+    printf("Triangle is Isosceles\n");
+  }
+  else
+  {
+    printf("Triangle is Scalene\n");
+  }
 }
 int main()
 {
