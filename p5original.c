@@ -6,14 +6,27 @@ int input()
   scanf("%d",&a);
   return a;
 }
-int g_cd(int a,int b)
+int find_gcd(int a,int b)
 {
-  int i,gcd;
-  for(i=1;i<=a && i<=b;i++)
+  int i,t,gcd;
+  if(a>b)
   {
-    if(a%i==0 && b%i==0)
-    gcd = i;
+    t = a;
+    a = b;
+    b = t;
   }
+  if(b%a == 0)
+  {
+    return a;
+  }
+  for(i=2;i<a/2;i++)
+  {
+    if(a%i == 0 && b%i == 0)
+    {
+      gcd = a;
+    }
+  }
+  return gcd;
 }
 void output(int a,int b,int gcd)
 {
@@ -24,7 +37,7 @@ int main()
   int a,b,gcd;
   a=input();
   b=input();
-  g_cd(a,b);
+  gcd=find_gcd(a,b);
   output(a,b,gcd);
   return 0;
 

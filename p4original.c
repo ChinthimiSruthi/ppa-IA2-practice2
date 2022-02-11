@@ -11,7 +11,9 @@ void input_array(int n,int a[n])
   int i;
   printf("Enter a number\n");
   for(i=0;i<n;i++)
+  {
    scanf("%d",&a[i]);
+  }
 }
 int is_composite(int n)
 {
@@ -44,8 +46,8 @@ int main()
 {
   int n,sum;
   n=input_array_size();
-  int a[n];
   input_array(n,a);
+  int a[n];
   is_composite(n);
   sum=sum_composite_numbers(n,a);
   out_put(sum);
